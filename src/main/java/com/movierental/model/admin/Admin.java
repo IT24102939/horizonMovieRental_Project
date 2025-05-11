@@ -78,6 +78,40 @@ public class Admin {
     }
 
 
+    // Method to authenticate admin
+    public boolean authenticate(String inputPassword) {
+        return this.password.equals(inputPassword);
+    }
+
+    // Check if admin is a super admin
+    public boolean isSuperAdmin() {
+        return "SUPER_ADMIN".equals(this.role);
+    }
+
+    // Convert admin to string representation for file storage
+    public String toFileString() {
+        return adminId + "," + username + "," + password + "," + email + "," + fullName + "," + role;
+    }
+
+    // Create admin from string representation (from file)
+    public static Admin fromFileString(String fileString) {
+        String[] parts = fileString.split(",");
+        if (parts.length >= 6) {
+            return new Admin(parts[0], parts[1], parts[2], parts[3], parts[4], parts[5]);
+        }
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "adminId='" + adminId + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
 
 
     }
