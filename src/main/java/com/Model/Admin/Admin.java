@@ -1,4 +1,5 @@
-package com.movierental.model.admin;
+package com.Model.Admin;
+
 
 public class Admin {
     private String adminId;
@@ -77,7 +78,6 @@ public class Admin {
         this.role = role;
     }
 
-
     // Method to authenticate admin
     public boolean authenticate(String inputPassword) {
         return this.password.equals(inputPassword);
@@ -112,6 +112,4 @@ public class Admin {
                 ", role='" + role + '\'' +
                 '}';
     }
-
-
-    }
+}
