@@ -61,7 +61,7 @@ public class UserManager {
     private void loadUsers() {
         File file = new File(dataFilePath);
 
-        // If file doesn't exist, create it
+
         if (!file.exists()) {
             try {
                 file.getParentFile().mkdirs();
