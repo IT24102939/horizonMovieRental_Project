@@ -1,4 +1,4 @@
-package com.movierental.servlet.admin;
+package com.Moiverental.Servlet.Admin;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,14 +11,16 @@ import javax.servlet.http.HttpSession;
 import com.movierental.model.admin.Admin;
 import com.movierental.model.admin.AdminManager;
 
-//Servlet for handling admin login
-
+/**
+ * Servlet for handling admin login
+ */
 @WebServlet("/admin/login")
 public class AdminLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    //Handles GET requests - display the login form
-
+    /**
+     * Handles GET requests - display the login form
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -34,7 +36,9 @@ public class AdminLoginServlet extends HttpServlet {
         request.getRequestDispatcher("/admin/login.jsp").forward(request, response);
     }
 
-     //Handles POST requests - process the login form
+    /**
+     * Handles POST requests - process the login form
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
