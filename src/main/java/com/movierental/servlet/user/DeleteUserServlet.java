@@ -31,7 +31,7 @@ public class DeleteUserServlet extends HttpServlet {
             return;
         }
 
-        // Forward to the delete confirmation page
+
         request.getRequestDispatcher("/user/delete-account.jsp").forward(request, response);
     }
 
