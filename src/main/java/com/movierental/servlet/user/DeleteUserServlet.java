@@ -49,7 +49,7 @@ public class DeleteUserServlet extends HttpServlet {
             return;
         }
 
-        // Get user ID from session
+
         String userId = (String) session.getAttribute("userId");
         System.out.println("DeleteUserServlet: Attempting to delete user: " + userId);
 
