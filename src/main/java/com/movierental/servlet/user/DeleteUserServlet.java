@@ -64,16 +64,16 @@ public class DeleteUserServlet extends HttpServlet {
         }
 
         try {
-            // Create UserManager with ServletContext to ensure proper file path
+
             UserManager userManager = new UserManager(getServletContext());
             System.out.println("DeleteUserServlet: UserManager created with ServletContext");
 
-            // Attempt to delete user
+
             boolean deleted = userManager.deleteUser(userId);
             System.out.println("DeleteUserServlet: Delete result: " + deleted);
 
             if (deleted) {
-                // Invalidate session
+
                 session.invalidate();
                 System.out.println("DeleteUserServlet: Session invalidated");
 
