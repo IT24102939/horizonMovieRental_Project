@@ -28,10 +28,10 @@ public class UserManager {
         loadUsers();
     }
 
-    // Initialize the file path
+
     private void initializeFilePath() {
         if (servletContext != null) {
-            // Use WEB-INF/data within the application context
+
             String webInfDataPath = "/WEB-INF/data";
             dataFilePath = servletContext.getRealPath(webInfDataPath) + File.separator + USER_FILE_NAME;
 
