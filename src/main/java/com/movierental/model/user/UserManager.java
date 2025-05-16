@@ -102,7 +102,7 @@ public class UserManager {
         }
     }
 
-    // Save users to file
+
     private boolean saveUsers() {
         try {
             // Ensure directory exists
