@@ -84,13 +84,13 @@ public class DeleteUserServlet extends HttpServlet {
 
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             } else {
-                // Deletion failed
+
                 System.out.println("DeleteUserServlet: Deletion failed");
                 request.setAttribute("errorMessage", "Failed to delete account. Please try again.");
                 request.getRequestDispatcher("/user/delete-account.jsp").forward(request, response);
             }
         } catch (Exception e) {
-            // Log any exceptions
+
             System.err.println("DeleteUserServlet: Exception occurred during account deletion:");
             e.printStackTrace();
 
