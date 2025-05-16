@@ -20,7 +20,7 @@ public class UserManager {
         this(null);
     }
 
-    // Constructor with ServletContext
+
     public UserManager(ServletContext servletContext) {
         this.servletContext = servletContext;
         users = new ArrayList<>();
