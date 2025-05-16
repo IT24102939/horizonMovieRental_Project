@@ -1,4 +1,4 @@
-package com.movierental.model.admin;
+package com.Moiverental.Model.Admin;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.UUID;
 import javax.servlet.ServletContext;
 
-
- //AdminManager class handles all admin-related operations
+/**
+ * AdminManager class handles all admin-related operations
+ */
 public class AdminManager {
     private static final String ADMIN_FILE_NAME = "admins.txt";
     private List<Admin> admins;
