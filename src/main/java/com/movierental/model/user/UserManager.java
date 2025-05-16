@@ -210,7 +210,7 @@ public class UserManager {
         return null;
     }
 
-    // Upgrade regular user to premium
+
     public boolean upgradeToPremium(String userId) {
         User user = getUserById(userId);
         if (user != null && user instanceof RegularUser) {
@@ -227,7 +227,7 @@ public class UserManager {
         return false;
     }
 
-    // Set ServletContext (can be used to update the context after initialization)
+
     public void setServletContext(ServletContext servletContext) {
         this.servletContext = servletContext;
         initializeFilePath();
