@@ -7,7 +7,7 @@ public class User {
     private String email;
     private String fullName;
 
-    // Constructor with all fields
+
     public User(String userId, String username, String password, String email, String fullName) {
         this.userId = userId;
         this.username = username;
@@ -16,7 +16,7 @@ public class User {
         this.fullName = fullName;
     }
 
-    // Default constructor
+
     public User() {
         this.userId = "";
         this.username = "";
@@ -25,7 +25,7 @@ public class User {
         this.fullName = "";
     }
 
-    // Getters and setters
+
     public String getUserId() {
         return userId;
     }
@@ -66,22 +66,22 @@ public class User {
         this.fullName = fullName;
     }
 
-    // Method to authenticate user
+
     public boolean authenticate(String inputPassword) {
         return this.password.equals(inputPassword);
     }
 
-    // Method to get rental limit (to be overridden by subclasses)
+
     public int getRentalLimit() {
         return 3; // Default rental limit
     }
 
-    // Convert user to string representation for file storage
+
     public String toFileString() {
         return userId + "," + username + "," + password + "," + email + "," + fullName;
     }
 
-    // Create user from string representation (from file)
+
     public static User fromFileString(String fileString) {
         String[] parts = fileString.split(",");
         if (parts.length >= 5) {
