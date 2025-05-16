@@ -127,7 +127,7 @@ public class UserManager {
         }
     }
 
-    // Add a new user
+
     public boolean addUser(User user) {
         try {
             // Check if username already exists
@@ -138,7 +138,7 @@ public class UserManager {
                 return false;
             }
 
-            // Generate a unique ID if not provided
+
             if (user.getUserId() == null || user.getUserId().isEmpty()) {
                 user.setUserId(UUID.randomUUID().toString());
             }
@@ -154,7 +154,7 @@ public class UserManager {
         }
     }
 
-    // Get user by ID
+
     public User getUserById(String userId) {
         for (User user : users) {
             if (user.getUserId().equals(userId)) {
@@ -164,7 +164,7 @@ public class UserManager {
         return null;
     }
 
-    // Get user by username
+
     public User getUserByUsername(String username) {
         for (User user : users) {
             if (user.getUsername().equals(username)) {
@@ -174,7 +174,7 @@ public class UserManager {
         return null;
     }
 
-    // Update user details
+
     public boolean updateUser(User updatedUser) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUserId().equals(updatedUser.getUserId())) {
