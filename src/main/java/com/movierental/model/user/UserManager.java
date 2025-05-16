@@ -46,7 +46,7 @@ public class UserManager {
             String dataPath = "data";
             dataFilePath = dataPath + File.separator + USER_FILE_NAME;
 
-            // Make sure directory exists
+
             File dataDir = new File(dataPath);
             if (!dataDir.exists()) {
                 boolean created = dataDir.mkdirs();
@@ -57,7 +57,7 @@ public class UserManager {
         System.out.println("UserManager: Using data file path: " + dataFilePath);
     }
 
-    // Load users from file
+
     private void loadUsers() {
         File file = new File(dataFilePath);
 
