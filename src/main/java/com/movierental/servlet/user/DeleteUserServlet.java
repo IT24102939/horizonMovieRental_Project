@@ -23,10 +23,10 @@ public class DeleteUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Check if user is logged in
+
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
-            // Not logged in, redirect to login
+
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
@@ -41,7 +41,7 @@ public class DeleteUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Check if user is logged in
+
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
 
