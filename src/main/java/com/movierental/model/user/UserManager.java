@@ -42,7 +42,7 @@ public class UserManager {
                 System.out.println("Created WEB-INF/data directory: " + dataDir.getAbsolutePath() + " - Success: " + created);
             }
         } else {
-            // Fallback to simple data directory if not in web context
+
             String dataPath = "data";
             dataFilePath = dataPath + File.separator + USER_FILE_NAME;
 
