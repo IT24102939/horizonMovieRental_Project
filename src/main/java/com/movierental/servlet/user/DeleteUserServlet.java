@@ -53,7 +53,7 @@ public class DeleteUserServlet extends HttpServlet {
         String userId = (String) session.getAttribute("userId");
         System.out.println("DeleteUserServlet: Attempting to delete user: " + userId);
 
-        // Get confirmation parameter
+
         String confirmDelete = request.getParameter("confirmDelete");
 
         if (!"yes".equals(confirmDelete)) {
