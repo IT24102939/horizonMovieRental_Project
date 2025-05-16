@@ -35,7 +35,7 @@ public class UserManager {
             String webInfDataPath = "/WEB-INF/data";
             dataFilePath = servletContext.getRealPath(webInfDataPath) + File.separator + USER_FILE_NAME;
 
-            // Make sure directory exists
+
             File dataDir = new File(servletContext.getRealPath(webInfDataPath));
             if (!dataDir.exists()) {
                 boolean created = dataDir.mkdirs();
