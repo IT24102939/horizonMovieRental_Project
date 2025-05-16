@@ -105,7 +105,7 @@ public class UserManager {
 
     private boolean saveUsers() {
         try {
-            // Ensure directory exists
+
             File file = new File(dataFilePath);
             if (!file.getParentFile().exists()) {
                 boolean created = file.getParentFile().mkdirs();
