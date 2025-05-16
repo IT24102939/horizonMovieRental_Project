@@ -44,7 +44,7 @@ public class DeleteUserServlet extends HttpServlet {
         // Check if user is logged in
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
-            // Not logged in, redirect to login
+
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
@@ -57,7 +57,7 @@ public class DeleteUserServlet extends HttpServlet {
         String confirmDelete = request.getParameter("confirmDelete");
 
         if (!"yes".equals(confirmDelete)) {
-            // User did not confirm deletion
+
             System.out.println("DeleteUserServlet: Deletion not confirmed");
             response.sendRedirect(request.getContextPath() + "/update-profile");
             return;
