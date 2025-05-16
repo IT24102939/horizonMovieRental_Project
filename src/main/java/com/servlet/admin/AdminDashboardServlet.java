@@ -20,16 +20,16 @@ import com.movierental.model.review.ReviewManager;
 import com.movierental.model.user.User;
 import com.movierental.model.user.UserManager;
 
-/**
- * Servlet for admin dashboard
- */
+
+  //Servlet for admin dashboard
+
 @WebServlet("/admin/dashboard")
 public class AdminDashboardServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * Handles GET requests - display the admin dashboard
-     */
+
+    //Handles GET requests - display the admin dashboard
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
