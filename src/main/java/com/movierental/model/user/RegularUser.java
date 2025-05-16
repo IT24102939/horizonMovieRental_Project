@@ -6,12 +6,12 @@ package com.movierental.model.user;
 public class RegularUser extends User {
     private static final int RENTAL_LIMIT = 3;
 
-    // Constructor with all fields
+
     public RegularUser(String userId, String username, String password, String email, String fullName) {
         super(userId, username, password, email, fullName);
     }
 
-    // Default constructor
+
     public RegularUser() {
         super();
     }
@@ -21,12 +21,12 @@ public class RegularUser extends User {
         return RENTAL_LIMIT;
     }
 
-    // Calculate rental fee (regular users pay standard rate)
+
     public double calculateRentalFee(int daysRented) {
         return 2.99 * daysRented;
     }
 
-    // Calculate late fee (regular users pay higher late fee)
+
     public double calculateLateFee(int daysLate) {
         return 1.50 * daysLate;
     }
