@@ -77,11 +77,11 @@ public class DeleteUserServlet extends HttpServlet {
                 session.invalidate();
                 System.out.println("DeleteUserServlet: Session invalidated");
 
-                // Create a new session to display success message
+
                 session = request.getSession(true);
                 session.setAttribute("successMessage", "Your account has been successfully deleted.");
 
-                // Redirect to home page
+
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             } else {
                 // Deletion failed
