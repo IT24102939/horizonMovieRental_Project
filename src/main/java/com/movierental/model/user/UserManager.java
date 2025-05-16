@@ -185,7 +185,7 @@ public class UserManager {
         return false;
     }
 
-    // Delete user
+
     public boolean deleteUser(String userId) {
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getUserId().equals(userId)) {
@@ -196,12 +196,12 @@ public class UserManager {
         return false;
     }
 
-    // Get all users
+
     public List<User> getAllUsers() {
         return new ArrayList<>(users);
     }
 
-    // Authenticate user
+
     public User authenticateUser(String username, String password) {
         User user = getUserByUsername(username);
         if (user != null && user.authenticate(password)) {
