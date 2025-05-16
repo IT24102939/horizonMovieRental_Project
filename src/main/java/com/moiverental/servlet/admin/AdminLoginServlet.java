@@ -1,5 +1,4 @@
-package com.Moiverental.Servlet.Admin;
-
+package com.movierental.servlet.admin;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
