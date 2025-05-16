@@ -15,7 +15,7 @@ public class UserManager {
     private ServletContext servletContext;
     private String dataFilePath;
 
-    // Constructor
+
     public UserManager() {
         this(null);
     }
@@ -64,7 +64,6 @@ public class UserManager {
         // If file doesn't exist, create it
         if (!file.exists()) {
             try {
-                // Ensure parent directory exists
                 file.getParentFile().mkdirs();
                 boolean created = file.createNewFile();
                 System.out.println("Created users file: " + dataFilePath + " - Success: " + created);
