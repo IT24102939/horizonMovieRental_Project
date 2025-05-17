@@ -55,7 +55,7 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        // Check if passwords match
+
         if (!password.equals(confirmPassword)) {
             request.setAttribute("errorMessage", "Passwords do not match");
             request.getRequestDispatcher("/user/register.jsp").forward(request, response);
