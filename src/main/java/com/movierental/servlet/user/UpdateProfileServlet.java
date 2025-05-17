@@ -120,13 +120,13 @@ public class UpdateProfileServlet extends HttpServlet {
             user.setFullName(fullName);
         }
 
-        // Handle account upgrade if requested
+
         if ("yes".equals(upgradeAccount) && user instanceof RegularUser) {
             userManager.upgradeToPremium(userId);
             // Get the newly upgraded user
             user = userManager.getUserById(userId);
         } else {
-            // Just update the existing user
+
             userManager.updateUser(user);
         }
 
