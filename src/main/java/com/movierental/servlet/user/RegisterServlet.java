@@ -33,19 +33,19 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get form parameters
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String confirmPassword = request.getParameter("confirmPassword");
         String email = request.getParameter("email");
         String fullName = request.getParameter("fullName");
 
-        // Debug logging
+
         System.out.println("RegisterServlet: Processing registration for user: " + username);
         System.out.println("RegisterServlet: Email: " + email);
         System.out.println("RegisterServlet: Full Name: " + fullName);
 
-        // Validate input
+
         if (username == null || password == null || email == null || fullName == null ||
                 username.trim().isEmpty() || password.trim().isEmpty() ||
                 email.trim().isEmpty() || fullName.trim().isEmpty()) {
