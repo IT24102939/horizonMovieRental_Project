@@ -62,10 +62,10 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        // Create UserManager
+        r
         UserManager userManager = new UserManager(getServletContext());
 
-        // Check if username already exists
+
         if (userManager.getUserByUsername(username) != null) {
             request.setAttribute("errorMessage", "Username already exists");
             request.getRequestDispatcher("/user/register.jsp").forward(request, response);
@@ -73,23 +73,23 @@ public class RegisterServlet extends HttpServlet {
         }
 
         try {
-            // Create new user
+
             RegularUser newUser = new RegularUser();
             newUser.setUsername(username);
             newUser.setPassword(password);
             newUser.setEmail(email);
             newUser.setFullName(fullName);
 
-            // Add user
+
             boolean success = userManager.addUser(newUser);
 
             if (success) {
-                // Set success message and redirect to login page
+
                 System.out.println("RegisterServlet: Successfully registered user: " + username);
                 request.getSession().setAttribute("successMessage", "Registration successful! Please login.");
                 response.sendRedirect(request.getContextPath() + "/login");
             } else {
-                // Set error message and go back to registration page
+
                 System.out.println("RegisterServlet: Failed to register user: " + username);
                 request.setAttribute("errorMessage", "Registration failed. Please try again.");
                 request.getRequestDispatcher("/user/register.jsp").forward(request, response);
