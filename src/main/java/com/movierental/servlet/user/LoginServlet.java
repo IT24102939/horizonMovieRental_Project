@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
             return;
         }
 
-        // Forward to the login page
+
         request.getRequestDispatcher("/user/login.jsp").forward(request, response);
     }
 
@@ -42,13 +42,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get form parameters
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         System.out.println("LoginServlet: Login attempt for user: " + username);
 
-        // Validate input
+
         if (username == null || password == null ||
                 username.trim().isEmpty() || password.trim().isEmpty()) {
 
@@ -58,14 +58,14 @@ public class LoginServlet extends HttpServlet {
         }
 
         try {
-            // Create UserManager and attempt authentication
+
             UserManager userManager = new UserManager(getServletContext());
             User user = userManager.authenticateUser(username, password);
 
             System.out.println("LoginServlet: Authentication result for " + username + ": " + (user != null ? "Success" : "Failed"));
 
             if (user != null) {
-                // Create session and add user
+
                 HttpSession session = request.getSession(true);
                 session.setAttribute("user", user);
                 session.setAttribute("userId", user.getUserId());
@@ -73,16 +73,16 @@ public class LoginServlet extends HttpServlet {
 
                 System.out.println("LoginServlet: User logged in successfully: " + username);
 
-                // Redirect to home page
+
                 response.sendRedirect(request.getContextPath() + "/index.jsp");
             } else {
-                // Authentication failed
+
                 System.out.println("LoginServlet: Authentication failed for user: " + username);
                 request.setAttribute("errorMessage", "Invalid username or password");
                 request.getRequestDispatcher("/user/login.jsp").forward(request, response);
             }
         } catch (Exception e) {
-            // Log any exceptions
+
             System.err.println("LoginServlet: Exception occurred during login:");
             e.printStackTrace();
 
@@ -100,12 +100,12 @@ public class LoginServlet extends HttpServlet {
         // Get the current session
         HttpSession session = request.getSession(false);
 
-        // Invalidate session if it exists
+
         if (session != null) {
             session.invalidate();
         }
 
-        // Redirect to login page
+
         response.sendRedirect(request.getContextPath() + "/login");
     }
 }
