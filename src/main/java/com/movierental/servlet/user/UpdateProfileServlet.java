@@ -123,21 +123,21 @@ public class UpdateProfileServlet extends HttpServlet {
 
         if ("yes".equals(upgradeAccount) && user instanceof RegularUser) {
             userManager.upgradeToPremium(userId);
-            // Get the newly upgraded user
+
             user = userManager.getUserById(userId);
         } else {
 
             userManager.updateUser(user);
         }
 
-        // Update session with new user data
+
         session.setAttribute("user", user);
 
-        // Set success message
+
         request.setAttribute("successMessage", "Profile updated successfully!");
         request.setAttribute("user", user);
 
-        // Forward back to update profile page
+
         request.getRequestDispatcher("/user/update-profile.jsp").forward(request, response);
     }
 }
