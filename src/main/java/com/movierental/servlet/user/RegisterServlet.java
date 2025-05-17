@@ -95,7 +95,7 @@ public class RegisterServlet extends HttpServlet {
                 request.getRequestDispatcher("/user/register.jsp").forward(request, response);
             }
         } catch (Exception e) {
-            // Log any exceptions
+
             System.err.println("RegisterServlet: Exception occurred during registration:");
             e.printStackTrace();
 
