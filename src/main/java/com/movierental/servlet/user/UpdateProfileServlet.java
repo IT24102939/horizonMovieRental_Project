@@ -90,7 +90,7 @@ public class UpdateProfileServlet extends HttpServlet {
         String confirmPassword = request.getParameter("confirmPassword");
         String upgradeAccount = request.getParameter("upgradeAccount");
 
-        // Check if current password is correct if they want to change password
+
         if (newPassword != null && !newPassword.trim().isEmpty()) {
             if (currentPassword == null || !user.authenticate(currentPassword)) {
                 request.setAttribute("errorMessage", "Current password is incorrect");
@@ -99,7 +99,7 @@ public class UpdateProfileServlet extends HttpServlet {
                 return;
             }
 
-            // Check if new passwords match
+
             if (!newPassword.equals(confirmPassword)) {
                 request.setAttribute("errorMessage", "New passwords do not match");
                 request.setAttribute("user", user);
@@ -107,11 +107,11 @@ public class UpdateProfileServlet extends HttpServlet {
                 return;
             }
 
-            // Update password
+
             user.setPassword(newPassword);
         }
 
-        // Update email and full name if provided
+
         if (email != null && !email.trim().isEmpty()) {
             user.setEmail(email);
         }
