@@ -25,32 +25,32 @@ public class UpdateProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Check if user is logged in
+
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
-            // Not logged in, redirect to login
+
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
-        // Get user ID from session
+
         String userId = (String) session.getAttribute("userId");
 
-        // Create UserManager and get user
+
         UserManager userManager = new UserManager(getServletContext());
         User user = userManager.getUserById(userId);
 
         if (user == null) {
-            // User not found (should not happen normally)
+
             session.invalidate();
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
-        // Add user to request attributes
+
         request.setAttribute("user", user);
 
-        // Forward to update profile page
+
         request.getRequestDispatcher("/user/update-profile.jsp").forward(request, response);
     }
 
@@ -60,29 +60,29 @@ public class UpdateProfileServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Check if user is logged in
+
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("userId") == null) {
-            // Not logged in, redirect to login
+
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
-        // Get user ID from session
+
         String userId = (String) session.getAttribute("userId");
 
-        // Create UserManager and get user
+
         UserManager userManager = new UserManager(getServletContext());
         User user = userManager.getUserById(userId);
 
         if (user == null) {
-            // User not found (should not happen normally)
+
             session.invalidate();
             response.sendRedirect(request.getContextPath() + "/login");
             return;
         }
 
-        // Get form parameters
+
         String email = request.getParameter("email");
         String fullName = request.getParameter("fullName");
         String currentPassword = request.getParameter("currentPassword");
