@@ -16,9 +16,7 @@ import com.movierental.model.user.RegularUser;
 import com.movierental.model.user.User;
 import com.movierental.model.user.UserManager;
 
-/**
- * RentalManager class handles all rental-related operations
- */
+
 public class RentalManager {
     private static final String RENTAL_FILE_NAME = "rentals.txt";
     private List<Transaction> transactions;
