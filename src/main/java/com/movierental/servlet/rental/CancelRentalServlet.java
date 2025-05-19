@@ -14,16 +14,16 @@ import com.movierental.model.rental.RentalManager;
 import com.movierental.model.rental.Transaction;
 import com.movierental.model.user.User;
 
-/*
- * Servlet for handling rental cancellations
- */
+
+ //Servlet for handling rental cancellations
+ 
 @WebServlet("/cancel-rental")
 public class CancelRentalServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    /**
-     * Handles GET requests - display the cancel rental confirmation page
-     */
+    
+     // Handles GET requests - display the cancel rental confirmation page
+     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -77,9 +77,9 @@ public class CancelRentalServlet extends HttpServlet {
         request.getRequestDispatcher("/rental/cancel-rental.jsp").forward(request, response);
     }
 
-    /**
-     * Handles POST requests - process the rental cancellation
-     */
+    
+    // Handles POST requests - process the rental cancellation
+     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
