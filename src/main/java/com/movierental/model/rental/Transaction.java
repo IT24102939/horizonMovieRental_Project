@@ -2,10 +2,7 @@ package com.movierental.model.rental;
 
 import java.util.Date;
 
-/**
- * Transaction class representing a movie rental transaction
- * Updated with additional properties for CRUD operations
- */
+
 public class Transaction {
     private String transactionId;
     private String userId;
